@@ -3,10 +3,10 @@ services:
     name: frontend
     env: docker
     plan: free
-    dockerfilePath: ./frontend/Dockerfile
+    dockerfilePath: ./ej-fe/Dockerfile
     buildFilter:
       paths:
-        - frontend/**
+        - ej-fe/**
     region: oregon
     healthCheckPath: /
     envVars:
