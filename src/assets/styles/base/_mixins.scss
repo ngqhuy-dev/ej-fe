@@ -1,0 +1,61 @@
+// width, height
+@mixin size($width: 100px, $height: $width) {
+  width: $width;
+  height: $height;
+}
+// absoluteCenter
+@mixin absoluteCenter($direction: 'left', $position: absolute) {
+  position: $position;
+  // @if $variable == {}
+  @if $direction == 'left' {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $direction == 'top' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $direction == 'both' {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// absolute full
+@mixin absoluteFull() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin absoluteFixed() {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+// mixin maxWidth($breakpoint){@content}
+@mixin maxWidth($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+// mixin minWidth($breakpoint)
+@mixin minWidth($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+// Flexbox
+@mixin flexbox($align-items: stretch, $justify-content: flex-start, $direction: row, $flex: flex, $wrap: nowrap) {
+  display: $flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}

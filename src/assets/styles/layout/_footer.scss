@@ -1,0 +1,159 @@
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: $color-second-background;
+  color: $color-medium-text;
+  &__main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Sửa lại để căn giữa */
+    justify-content: space-between;
+    max-width: $container;
+    margin: 80px auto;
+    gap: 24px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px;
+      strong {
+        color: $color-primary-purple;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+      }
+    }
+    .content__right-pay {
+      display: flex;
+      gap: 20px;
+    }
+    margin-bottom: 40px;
+  }
+
+  &__contact,
+  &__categories,
+  &__useful-links,
+  &__help-center,
+  &__app-links {
+    max-width: calc(100% / 5);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    h4 {
+      color: $color-dark-text;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      a {
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        color: $color-medium-text;
+        &:hover {
+          color: $color-dark-text;
+        }
+      }
+    }
+  }
+
+  &__contact {
+    // width: calc(100% / 3);
+    &-title {
+      color: $color-dark-text;
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16.8px;
+    }
+    &-subtext {
+      color: $color-medium-text;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 19.5px; /* 150% */
+    }
+    &-email,
+    &-phone {
+      display: flex;
+      align-content: center;
+      gap: 20px;
+    }
+    &-details {
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      h5 {
+        color: $color-medium-text;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.8rem;
+      }
+      a,
+      h1 {
+        color: $color-dark-text;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 3rem;
+      }
+    }
+  }
+
+  &__app-links {
+    .download-app {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .app-store,
+      .google-play {
+        display: flex;
+        align-content: center;
+        gap: 20px;
+        height: auto;
+        outline: none;
+        color: $color-medium-text;
+        background-color: transparent;
+        p {
+          text-align: left;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 20px;
+          letter-spacing: 1.2px;
+        }
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .social {
+      &-media {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      &-icons {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

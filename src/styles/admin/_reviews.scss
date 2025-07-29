@@ -1,0 +1,127 @@
+.admin__status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+
+  &--pending {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  &--approved {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  &--rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+}
+
+.admin__rating {
+  display: flex;
+  gap: 2px;
+
+  svg {
+    color: #e5e7eb;
+    transition: color 0.2s ease;
+
+    &.filled {
+      color: #fbbf24;
+    }
+
+    &.empty {
+      color: #e5e7eb;
+    }
+  }
+}
+
+.admin__publish-btn {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &--published {
+    background-color: #28a745;
+    color: white;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+
+  &--unpublished {
+    background-color: #dc3545;
+    color: white;
+
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.admin__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin__action-btn {
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &--view {
+    background-color: #4a90e2;
+    color: white;
+
+    &:hover {
+      background-color: darken(#4a90e2, 10%);
+    }
+  }
+
+  &--product {
+    background-color: #50c878;
+    color: white;
+
+    &:hover {
+      background-color: darken(#50c878, 10%);
+    }
+
+    &:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+  }
+
+  &--delete {
+    background-color: #ff4444;
+    color: white;
+
+    &:hover {
+      background-color: darken(#ff4444, 10%);
+    }
+  }
+}

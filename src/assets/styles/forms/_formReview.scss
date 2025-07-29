@@ -1,0 +1,59 @@
+.review-form {
+  @include flexbox(flex-start, flex-start, column, flex, nowrap);
+  margin: 1rem 0;
+  gap: 2rem;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+  .rating-input {
+    @include flexbox(center, flex-start, row, flex, nowrap);
+    gap: 2rem;
+    label {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    .stars-select {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      svg {
+        @include size(30px, 30px);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .comment-input {
+    @include flexbox(flex-start, flex-start, column, flex, nowrap);
+    width: 100%;
+    gap: 1rem;
+    label {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      resize: none;
+      font-size: 1.6rem;
+    }
+  }
+
+  .btn {
+    &.btn__submit-review {
+      max-width: 200px;
+    }
+  }
+
+  .form-actions__review {
+    @include flexbox(flex-start, flex-start, row, flex, nowrap);
+    .btn-cancel__review,
+    .btn-submit__review {
+      line-height: 36px;
+    }
+  }
+}

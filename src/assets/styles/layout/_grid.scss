@@ -1,0 +1,35 @@
+.block__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Khi màn hình nhỏ hơn 1200px, giảm xuống 4 cột */
+@media (max-width: 1200px) {
+  .block__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Khi màn hình nhỏ hơn 900px, giảm xuống 3 cột */
+@media (max-width: 900px) {
+  .block__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Khi màn hình nhỏ hơn 600px, giảm xuống 2 cột */
+@media (max-width: 600px) {
+  .block__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Khi màn hình nhỏ hơn 400px, chỉ còn 1 cột */
+@media (max-width: 400px) {
+  .block__grid {
+    grid-template-columns: 1fr;
+  }
+}

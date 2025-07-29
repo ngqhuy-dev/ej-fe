@@ -1,0 +1,183 @@
+.contact {
+  &__header {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e7eb;
+    .content {
+      &__title {
+        color: $color-dark-text;
+        font-size: 5.6rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 72.8px;
+
+        &-suptext {
+          color: $color-dark-text;
+          font-size: 1.3rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+      }
+
+      &__subtext {
+        color: $color-dark-text;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 27px;
+      }
+    }
+  }
+
+  &__content {
+    @include flexbox(flex-start, space-between, row, flex, nowrap);
+    gap: 30px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 0;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    // **Phần Chi Tiết Văn Phòng**
+    .content__details {
+      max-width: calc(100% / 2);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex: 1;
+
+      .img-details {
+        max-width: 400px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+
+      .details__office {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .office__card {
+          padding: 15px;
+          border-radius: 8px;
+          text-align: left;
+          width: auto;
+
+          .card-location {
+            font-size: 12px;
+            color: #777;
+          }
+
+          .card-name {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 5px 0;
+          }
+
+          .card-address {
+            font-size: 13px;
+            color: #555;
+          }
+
+          .card-phone {
+            font-size: 1px;
+            font-weight: 600;
+            margin-top: 10px;
+          }
+
+          .card-email {
+            color: #6a44d2;
+            text-decoration: none;
+            font-size: 14px;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    // **Phần Form Liên Hệ**
+    .contact__form {
+      flex: 1;
+      align-self: center;
+      margin: 0 auto;
+      padding: 50px;
+      background-color: #f2f3f5;
+      border-radius: 10px;
+      max-width: calc(100% / 2);
+
+      .form__field {
+        margin-bottom: 15px;
+      }
+
+      .form__row {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+
+        div {
+          flex: 1;
+        }
+      }
+
+      .form__label {
+        font-size: 13px;
+        font-weight: 400;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form__input,
+      .form__textarea {
+        width: 100%;
+        padding: 11.5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .form__textarea {
+        max-width: 100%;
+        min-width: 100%;
+        max-height: 154px;
+        min-height: 154px;
+        scrollbar-width: auto;
+      }
+
+      .form__textarea {
+        height: 100px;
+      }
+
+      .form__button {
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin-top: 10px;
+
+        &:hover {
+          background: #643cd1;
+        }
+      }
+    }
+  }
+}

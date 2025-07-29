@@ -1,0 +1,176 @@
+.account-container {
+  margin: auto;
+  max-width: 1140px;
+  margin-top: 15rem;
+  display: flex;
+  align-items: flex-start;
+  justify-items: center;
+  .account-main {
+    margin-left: 10rem;
+    width: 480px;
+    height: fit-content;
+    padding: 20px;
+    // border: 1px solid #a5a5a5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+
+    .account-heading {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .account-subtext {
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 19.5px; /* 150% */
+      color: $color-dark-text;
+      margin-bottom: 15px;
+    }
+
+    .block__form {
+      .btn__submit-account {
+        width: 100%;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .form-footer,
+      .link-resetPassword {
+        display: block;
+        width: 100%;
+        text-align: left;
+
+        a {
+          color: $color-primary-purple;
+          text-decoration: underline;
+          line-height: normal;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .item-other {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px; // Khoảng cách giữa các phần tử bên trong
+      margin: 20px 0;
+
+      .line-left,
+      .line-right {
+        flex: 1;
+        height: 1px;
+        background-color: #ccc; // Màu của đường kẻ
+      }
+
+      .text-or {
+        font-weight: bold;
+        color: #555; // Màu chữ
+        text-transform: uppercase;
+      }
+    }
+
+    .social__login {
+      &-other {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+
+      &-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: white;
+        width: 100%;
+        font-size: 1.4rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: #cccccc;
+        }
+        img {
+          width: 30px;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .form-describe {
+    flex: 1;
+    padding-right: 5rem;
+    max-width: 480px;
+
+    &__logo {
+      margin-bottom: 3rem;
+
+      img {
+        width: 200px;
+        height: auto;
+      }
+    }
+
+    &__title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: $color-dark-text;
+      margin-bottom: 2rem;
+    }
+
+    &__text {
+      font-size: 1.6rem;
+      line-height: 1.6;
+      color: $color-dark-text;
+    }
+
+    .btn.btn__back-normal {
+      width: fit-content;
+      margin-top: 32px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: black;
+      text-align: center;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 42px;
+      background-color: transparent;
+      border: 1px solid #dfdfdf;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: #dfdfdf;
+      }
+      svg {
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+        margin: auto 0;
+      }
+    }
+  }
+  .register {
+    font-size: 16px;
+    color: gray;
+    margin-left: 10px;
+  }
+}

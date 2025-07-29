@@ -1,0 +1,57 @@
+.block__table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .admin__table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      background: #f8f9fa;
+      padding: 16px;
+      text-align: left;
+      font-weight: 600;
+      color: #2c3e50;
+      border-bottom: 2px solid #e9ecef;
+        text-transform: uppercase;
+    }
+
+    td {
+      min-width: 80px;
+      max-width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 16px;
+      border-bottom: 1px solid #f1f3f4;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    tr:hover {
+      background: #f8f9fa;
+    }
+  }
+
+  .table-actions {
+    display: flex;
+    gap: 8px;
+
+    button {
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    &.table-actions__accept {
+      button {
+        background-color: $admin-success-color;
+      }
+    }
+  }
+}

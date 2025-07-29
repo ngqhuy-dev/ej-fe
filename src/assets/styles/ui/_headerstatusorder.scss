@@ -1,0 +1,20 @@
+.header__nav {
+  &.header__nav--status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header__nav-item {
+      background-color: transparent;
+      border: none;
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-top: -2rem;
+      padding: 2rem 2rem;
+
+      &.active {
+        color: $color-primary-purple;
+        border-bottom: 2px solid $color-primary-purple;
+      }
+    }
+  }
+}

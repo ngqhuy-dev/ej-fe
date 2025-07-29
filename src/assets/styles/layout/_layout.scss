@@ -1,0 +1,191 @@
+:root {
+  font-family: $font-body;
+  line-height: 1.6;
+  font-weight: 400;
+  color: $color-dark-text;
+  background-color: $color-main-background;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: $container;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+// NOTE: form
+.block__form {
+  margin-bottom: 15px;
+  width: 100%;
+  .form__field {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 15px;
+
+    label {
+      display: block; /* Đảm bảo label không bị dính vào input */
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: black;
+    }
+
+    &-input {
+      border: 1px solid #a5a5a5;
+      border-radius: 8px;
+      overflow: hidden;
+      @include flexbox(center, space-between, row, flex, nowrap);
+      width: 100%;
+      input {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: #fff;
+        box-sizing: border-box;
+        color: black;
+        font-size: 1.4rem;
+        font-weight: 00;
+        letter-spacing: 1.2px;
+        &:disabled {
+          border: none;
+          background-color: #e7e7e7;
+        }
+      }
+      .see-password {
+        width: 16px;
+        height: 16px;
+        border: none;
+        padding: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 1px solid #a5a5a5;
+
+        .icon-eye {
+          font-size: 1.9rem;
+          margin: 0;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+// NOTE: modal
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); // Nửa trong suốt, đồng bộ với admin
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+//NOTE: Thanh điều hướng
+.header__nav {
+  width: 100%;
+  line-height: normal;
+  border-bottom: 1px solid #ddd;
+
+  &-content {
+    @include flexbox(center, space-between, row, flex, nowrap);
+    max-width: $container;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .header__menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: normal;
+
+    li {
+      cursor: pointer;
+      position: relative;
+
+      a {
+        display: inline-block;
+        color: $color-dark-text;
+        padding: 14.5px 0;
+        text-decoration: none;
+      }
+
+      &.dropdown::after {
+        content: '▼';
+        font-size: 12px;
+        margin-left: 5px;
+      }
+    }
+
+    li:hover {
+      a,
+      .trending-products {
+        color: $color-primary-purple;
+      }
+      &.dropdown::after {
+        color: $color-primary-purple;
+      }
+    }
+  }
+}
+
+// img empty
+.img__empty {
+  max-width: 160px;
+  margin: auto;
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid rgb(233, 236, 239);
+  border-radius: 25px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+// NOTE: load data
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #6c757d;
+
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f4f6;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

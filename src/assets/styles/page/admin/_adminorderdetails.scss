@@ -1,0 +1,522 @@
+.admin-section {
+  // Chi tiết đơn hàng (dùng trong Orders)
+  .admin__order-details {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+
+  // Timeline trạng thái đơn hàng
+  .admin__order-timeline {
+    margin-bottom: 32px;
+    padding: 24px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+    border-left: 4px solid #3b82f6;
+
+    h3 {
+      margin-bottom: 20px;
+      color: #1e293b;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .timeline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      padding: 20px 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #e2e8f0;
+        z-index: 1;
+      }
+
+      .timeline-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        flex: 1;
+
+        .timeline-marker {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background: #e2e8f0;
+          border: 3px solid #ffffff;
+          margin-bottom: 8px;
+          transition: all 0.3s ease;
+        }
+
+        .timeline-content {
+          text-align: center;
+
+          .timeline-title {
+            font-size: 1.2rem;
+            color: #64748b;
+            font-weight: 500;
+          }
+        }
+
+        &.completed {
+          .timeline-marker {
+            background: #10b981;
+          }
+
+          .timeline-title {
+            color: #059669;
+            font-weight: 600;
+          }
+        }
+
+        &.active {
+          .timeline-marker {
+            background: #3b82f6;
+            animation: pulse 2s infinite;
+          }
+
+          .timeline-title {
+            color: #1d4ed8;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  // Grid thông tin đơn hàng
+  .admin__order-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .admin__info-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      margin-bottom: 20px;
+      color: #1f2937;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border-bottom: 2px solid #f3f4f6;
+      padding-bottom: 12px;
+    }
+
+    .admin__info-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding: 8px 0;
+
+      label {
+        font-weight: 500;
+        color: #6b7280;
+        font-size: 1.6rem;
+        flex: 1;
+      }
+
+      span {
+        font-size: 1.6rem;
+        color: #1f2937;
+        font-weight: 500;
+        flex: 1.5;
+        text-align: right;
+
+        &.address-full {
+          font-size: 1.6rem;
+          line-height: 1.5;
+          white-space: normal; /* Cho phép xuống dòng */
+          overflow: visible; /* Không cắt nội dung */
+          text-overflow: unset;
+        }
+      }
+    }
+  }
+
+  // Ghi chú đơn hàng
+  .admin__order-note {
+    margin-bottom: 32px;
+
+    h3 {
+      margin-bottom: 16px;
+      color: #1f2937;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .note-content {
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      border-radius: 8px;
+      padding: 16px;
+
+      p {
+        margin: 0;
+        font-size: 1.4rem;
+        color: #92400e;
+        line-height: 1.6;
+        font-style: italic;
+      }
+    }
+  }
+
+  // Danh sách sản phẩm
+  .admin__order-items {
+    margin-bottom: 32px;
+
+    .admin__section-subtitle {
+      margin-bottom: 20px;
+      color: #1f2937;
+      font-size: 1.6rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &::before {
+        content: '';
+        font-size: 1.8rem;
+      }
+    }
+
+    .admin__empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #6b7280;
+
+      p {
+        font-size: 1.6rem;
+        margin: 0;
+      }
+    }
+  }
+
+  // Tóm tắt đơn hàng
+  .admin__order-summary {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    max-width: 400px;
+    margin-left: auto;
+
+    .admin__order-summary-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.5rem;
+      color: #374151;
+      margin: 12px 0;
+      padding: 8px 0;
+
+      span:first-child {
+        font-weight: 500;
+      }
+
+      span:last-child {
+        font-weight: 600;
+      }
+
+      .discount-amount {
+        color: #dc2626;
+      }
+
+      &--total {
+        font-size: 1.8rem;
+        color: #1f2937;
+        font-weight: 700;
+        border-top: 2px solid #d1d5db;
+        padding-top: 16px;
+        margin-top: 16px;
+
+        span:last-child {
+          color: #059669;
+        }
+      }
+    }
+  }
+
+  // Modal cập nhật trạng thái
+  .admin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+  }
+
+  .admin-modal {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    animation: modalFadeIn 0.3s ease-out;
+
+    .admin-modal__header {
+      padding: 24px 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 16px;
+
+      h3 {
+        margin: 0;
+        color: #1f2937;
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+
+      .admin-modal__close {
+        background: none;
+        border: none;
+        font-size: 2.4rem;
+        color: #6b7280;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: #f3f4f6;
+          color: #374151;
+        }
+      }
+    }
+
+    .admin-modal__body {
+      padding: 24px;
+
+      .form-group {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          margin-bottom: 8px;
+          color: #374151;
+          font-weight: 500;
+          font-size: 1.4rem;
+        }
+
+        .current-status {
+          display: inline-block;
+          background: #f3f4f6;
+          color: #1f2937;
+          padding: 8px 16px;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 1.4rem;
+        }
+
+        .form-control {
+          width: 100%;
+          padding: 12px 16px;
+          border: 2px solid #e5e7eb;
+          border-radius: 8px;
+          font-size: 1.4rem;
+          transition: border-color 0.2s ease;
+
+          &:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+          }
+        }
+      }
+    }
+
+    .admin-modal__footer {
+      padding: 16px 24px 24px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      border-top: 1px solid #e5e7eb;
+    }
+  }
+
+  // Buttons
+  .admin-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &--primary {
+      background: #3b82f6;
+      color: #ffffff;
+
+      &:hover:not(:disabled) {
+        background: #2563eb;
+        transform: translateY(-1px);
+      }
+    }
+
+    &--secondary {
+      background: #6b7280;
+      color: #ffffff;
+
+      &:hover:not(:disabled) {
+        background: #4b5563;
+        transform: translateY(-1px);
+      }
+    }
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  // Actions trong header
+  .admin-section__actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    .admin__order-details {
+      padding: 16px;
+    }
+
+    .admin__order-info-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .admin__info-card {
+      padding: 16px;
+    }
+
+    .admin__order-timeline {
+      padding: 16px;
+
+      .timeline {
+        flex-direction: column;
+        gap: 16px;
+
+        &::before {
+          width: 2px;
+          height: 100%;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .timeline-item {
+          flex-direction: row;
+          align-items: center;
+          gap: 16px;
+
+          .timeline-marker {
+            margin-bottom: 0;
+            flex-shrink: 0;
+          }
+
+          .timeline-content {
+            text-align: left;
+            flex: 1;
+          }
+        }
+      }
+    }
+
+    .admin__table-wrapper {
+      overflow-x: auto;
+    }
+
+    .admin__order-summary {
+      max-width: none;
+      margin-left: 0;
+    }
+
+    .admin-section__actions {
+      flex-direction: column;
+      align-items: stretch;
+
+      .admin-btn,
+      .admin-add__button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .admin-modal {
+      width: 95%;
+      margin: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .admin__info-group {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+
+      span {
+        text-align: left !important;
+      }
+    }
+
+    .admin__table {
+      font-size: 1.2rem;
+
+      thead th {
+        padding: 12px 8px;
+        font-size: 1.1rem;
+      }
+
+      tbody td {
+        padding: 12px 8px;
+      }
+    }
+  }
+}

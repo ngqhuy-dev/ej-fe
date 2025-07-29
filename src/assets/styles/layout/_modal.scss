@@ -1,0 +1,102 @@
+// File: src/assets/styles/page/modal.scss
+.modal-overlay {
+  .modal-content {
+    position: relative;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease;
+
+    .modal-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+
+    .modal-message {
+      font-size: 1.4rem;
+      color: #6b7280;
+      margin-bottom: 20px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      .modal-btn {
+        padding: 8px 16px; // Padding nhỏ hơn admin__form-button một chút
+        border: none;
+        border-radius: 4px; // Bo góc giống admin__action-btn
+        font-size: 1.4rem; // Đồng bộ với admin__form-button
+        font-weight: 500; // Font-weight nhẹ hơn một chút
+        cursor: pointer;
+        transition:
+          background-color 0.3s ease,
+          transform 0.2s ease; // Hiệu ứng giống admin__add-button
+
+        &--cancel {
+          background: #ccc; // Màu xám nhạt
+          color: #fff;
+          &:hover {
+            background: darken(#ccc, 10%);
+            transform: translateY(-2px); // Hiệu ứng nhấc lên giống admin__add-button
+          }
+          &:active {
+            transform: translateY(0); // Trở lại khi nhấn
+          }
+        }
+
+        &--confirm {
+          background: #ff4d4d; // Màu đỏ giống admin__logout và admin__action-btn--delete
+          color: #fff;
+          &:hover {
+            background: darken(#ff4d4d, 10%);
+            transform: translateY(-2px);
+          }
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Hiệu ứng fade in cho modal
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 15px; // Giảm padding trên mobile
+  }
+
+  .modal-title {
+    font-size: 1.6rem; // Giảm kích thước chữ
+  }
+
+  .modal-message {
+    font-size: 1.3rem;
+  }
+
+  .modal-btn {
+    padding: 6px 12px; // Giảm kích thước nút
+    font-size: 1.3rem;
+  }
+}

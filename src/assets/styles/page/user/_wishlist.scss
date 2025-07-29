@@ -1,0 +1,54 @@
+.wishlist {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  margin-bottom: 1.5rem;
+
+  &__container {
+    // max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 1440px) {
+    &__grid {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+
+    &__container {
+      padding: 1rem 0;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1.5rem;
+    }
+
+    &__item {
+      padding: 1rem;
+
+      .item__name {
+        font-size: 1.3rem;
+      }
+
+      .item__price {
+        .current-price {
+          font-size: 1.4rem;
+        }
+
+        .original-price {
+          font-size: 1.2rem;
+        }
+      }
+
+      .add-btn {
+        padding: 1rem;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

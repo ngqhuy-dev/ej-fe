@@ -1,0 +1,208 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #fff;
+
+  // Thanh trên cùng
+  &__top {
+    width: 100%;
+    font-size: 1.2rem;
+    color: $color-medium-text;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+
+    &-content {
+      @include flexbox(center, space-between, row, flex, nowrap);
+      max-width: $container;
+      margin: 0 auto;
+      padding: 12.5px 20px;
+    }
+    &-left,
+    &-right {
+      display: flex;
+      gap: 15px;
+    }
+
+    &-left {
+      .header__delivery-time {
+        padding-left: 15px;
+        border-left: 1px solid #e5e7eb;
+      }
+    }
+
+    &-right {
+      align-items: center;
+    }
+
+    &-item {
+      &__link {
+        font-weight: 500;
+        line-height: normal;
+        color: $color-medium-text;
+        text-decoration: none;
+        align-items: center;
+
+        &:hover {
+          color: $color-primary-purple;
+        }
+      }
+    }
+
+    .highlight {
+      padding-left: 5px;
+      color: #e74c3c;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+
+  // Thanh chính
+  &__main {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    &-content {
+      @include flexbox(center, space-between, row, flex, nowrap);
+      max-width: $container;
+      margin: 0 auto;
+      padding: 16px 20px;
+      gap: 20px;
+    }
+    .header__logo {
+      img {
+        height: 39.123px;
+      }
+    }
+
+    .header__location {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: $color-medium-text;
+      &-text {
+        justify-content: flex-start;
+        strong {
+          color: $color-dark-text;
+        }
+      }
+    }
+
+    .header__search {
+      width: 100%;
+      flex: 1;
+      @include flexbox(center, space-between, row, flex, nowrap);
+      border-radius: 8px;
+      border: 1px solid #a5a5a5;
+      background-color: $color-main-background;
+
+      input {
+        flex-grow: 1;
+        padding: 14px 45px 14px 18px;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+      }
+
+      &-button {
+        height: 100%;
+        border: none;
+        flex-grow: 0;
+        padding: 11px 14.5px;
+        background: transparent;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 1px solid #a5a5a5;
+        &:hover {
+          cursor: pointer;
+          background-color: #e5e7eb;
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+      }
+    }
+
+    .header__icons {
+      @include flexbox(center, space-between, row, flex, nowrap);
+      gap: 15px;
+
+      .header__account {
+        position: relative;
+        display: inline-block;
+
+        &-btn {
+          @include flexbox(center, center, row, flex, nowrap);
+          gap: 20%;
+          border-radius: 8px;
+          padding: 13px;
+          border: 1px solid #a5a5a5;
+          background-color: transparent;
+          cursor: pointer;
+
+          strong {
+            color: #030712;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 15.6px; /* 120% */
+          }
+        }
+
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          margin-top: 16px;
+          background: white;
+          border-radius: 8px;
+          border: 1px solid #f2f3f5;
+          box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.1);
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          min-width: 200px;
+          z-index: 100;
+
+          a {
+            width: 100%;
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+            display: block;
+            font-size: 14px;
+            &:hover {
+              background-color: #f0f0f0;
+            }
+          }
+        }
+      }
+
+      .header__wishlist,
+      .header__cart {
+        cursor: pointer;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 25px;
+        }
+
+        .header__count {
+          width: 25px;
+          height: auto;
+          position: absolute;
+          top: 0px;
+          right: -25%;
+          background: black;
+          color: white;
+          font-size: 1.4rem;
+          font-weight: 600;
+          border-radius: 50%;
+          transform: translateY(-50%);
+          text-align: center;
+        }
+      }
+    }
+  }
+}

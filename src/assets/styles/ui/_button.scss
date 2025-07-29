@@ -1,0 +1,114 @@
+@import '../base/variables';
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: $color-primary-purple;
+  color: $color-main-background;
+  transition: background-color 0.3s opacity 0.3s; // Thêm transition cho opacity
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px;
+  position: relative; // Để spinner định vị chính xác
+  cursor: pointer;
+  padding: 0 20px; // Thêm padding để tránh nội dung sát mép
+
+  &:hover {
+    background-color: #6a5acd;
+  }
+
+  &:disabled {
+    background-color: darken($color-primary-purple, 20%); // Làm tối màu nền
+    opacity: 0.7; // Làm mờ nhẹ
+    cursor: not-allowed;
+  }
+
+  &.btn-loading {
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid $color-main-background;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-right: 8px; // Khoảng cách với nội dung
+      vertical-align: middle;
+    }
+  }
+
+  &.btn-add {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    background: $color-first-green;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+
+    &:hover {
+      background: darken($color-first-green, 10%);
+    }
+  }
+
+  &.btn-edit {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    background: $color-primary-purple;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+
+    &:hover {
+      background: darken($color-primary-purple, 10%);
+    }
+  }
+  &.btn-update {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    background: $color-first-green;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+
+    &:hover {
+      background: darken($color-first-green, 10%);
+    }
+  }
+  &.btn-cancel {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    background: $color-dark-red;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+
+    margin-right: 10px;
+
+    &:hover {
+      background: darken($color-dark-red, 10%);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

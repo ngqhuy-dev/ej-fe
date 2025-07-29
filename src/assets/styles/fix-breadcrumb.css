@@ -1,0 +1,37 @@
+/* Fix CSS cho Breadcrumb */
+.breadcrumb__item,
+.breadcrumb__item a,
+.breadcrumb__item span,
+.admin__breadcrumb .breadcrumb__item,
+.admin__breadcrumb .breadcrumb__item a,
+.admin__breadcrumb .breadcrumb__item span {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+}
+
+.breadcrumb__separator,
+.admin__breadcrumb .breadcrumb__separator {
+  font-size: 1.2rem !important;
+  margin: 0 0.5rem !important;
+}
+
+.breadcrumb__icon,
+.admin__breadcrumb .breadcrumb__icon {
+  font-size: 1.32rem !important;
+  margin-right: 0.5rem !important;
+}
+
+/* Fix lề trái cho admin */
+.admin__breadcrumb {
+  padding-left: 0.5rem !important;
+}
+
+.breadcrumb,
+.breadcrumb__container,
+.admin__breadcrumb .breadcrumb__container,
+.breadcrumb__item--home,
+.breadcrumb__item:first-child,
+.admin__breadcrumb .breadcrumb__item:first-child {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
