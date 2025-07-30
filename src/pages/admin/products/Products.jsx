@@ -42,18 +42,14 @@ const Products = () => {
         setError(null);
 
         const data = await getCategoriesAll();
-        console.log(`✅ Fetched ${data.length} categories`);
-        if (data && Array.isArray(data)) {
-          setCategories(
-            data.map((cat) => ({
-              ...cat,
-              name: cat.name,
-            })),
-          );
-        } else {
-          console.error('❌ Received invalid data format:', data);
-          setError('Dữ liệu danh mục không hợp lệ');
-        }
+        setCategories(
+          Array.isArray(data)
+            ? data.map((cat) => ({
+                ...cat,
+                name: cat.name,
+              }))
+            : [],
+        );
       } catch (err) {
         console.error('❌ Error in fetchCategories:', err);
 
