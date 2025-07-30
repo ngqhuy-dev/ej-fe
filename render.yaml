@@ -3,11 +3,8 @@ services:
     name: frontend
     env: docker
     plan: free
-    dockerfilePath: ./ej-fe/Dockerfile
-    buildFilter:
-      paths:
-        - ej-fe/**
     region: oregon
+    dockerfilePath: ./Dockerfile
     healthCheckPath: /
     envVars:
       - key: NODE_ENV
