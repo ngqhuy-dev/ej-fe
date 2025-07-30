@@ -9,3 +9,9 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: VITE_API_URL_V
+        value: https://ej-be.onrender.com
+      - key: VITE_API_URL_V1
+        value: https://ej-be.onrender.com/api
+      - key: GOOGLE_CLIENT_ID
+        value: 135937301382-cd3oq7pvgqt6vm5pk6f3ri3b8akph6oa.apps.googleusercontent.com
