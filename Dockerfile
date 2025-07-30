@@ -2,16 +2,9 @@ FROM node:18-alpine as build
 
 WORKDIR /app
 
-# Copy package files first for better Docker layer caching
-COPY package*.json ./
-
-# Install dependencies
-RUN npm ci --only=production
-
-# Copy source code
 COPY . .
 
-# Build the application
+RUN npm install
 RUN npm run build
 
 FROM nginx:stable-alpine
