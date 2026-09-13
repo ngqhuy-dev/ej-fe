@@ -5,7 +5,7 @@ import { getAllReviews, deleteReview, togglePublish } from '@services/ReviewServ
 import { useDispatch, useSelector } from 'react-redux';
 import { loginSuccess } from '@/redux/authSlice.jsx';
 import { createAxios } from '@utils/createInstance.jsx';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-regular-svg-icons';
 import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -34,8 +34,6 @@ const ProductReviews = () => {
       setLoading(false);
     }
   };
-
-  console.log(reviews);
 
   useEffect(() => {
     fetchReviews();

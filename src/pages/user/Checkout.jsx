@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faArrowLeft, faSpinner, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import { useLocation, Link, useSearchParams, useNavigate } from 'react-router-dom';
 
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 
 import Breadcrumb from '@components/common/ui/Breadcrumb';
 import ModalAddress from '@pages/user/InfoUser/AddressTab/ModalAddress';
@@ -92,7 +92,7 @@ const Checkout = () => {
       if (response.success) {
         toast.success('Đặt hàng thành công!', {
           position: 'top-center',
-          autoClose: 2000,
+          duration: 2000,
         });
         if (response.data.paymentMethod === 'vnpay') {
           const res = await paymentService(response.data._id, accessToken, axiosJWT);
